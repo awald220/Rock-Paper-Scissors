@@ -1,0 +1,36 @@
+body {
+    width: 100%;
+}
+
+#header {
+    background-color: aquamarine;
+}
+
+#gameContent {
+    display: flex;
+    width: 80%;
+}
+
+#player1 {
+    flex: 1;
+}
+
+#player2 {
+    flex: 1;
+}
+
+#score-display {
+    flex: 1;
+}
+
+input {
+    display: flex;
+}
+
+#chatText {
+    flex: 1;
+}
+
+#submit {
+    flex: 1;
+}
