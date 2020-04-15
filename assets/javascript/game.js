@@ -28,7 +28,64 @@ $(document).ready(function(){
 
     database.ref().on("child_added", function (childSnapshot){
 
+
     })
 
+    var playerChoice = "";
+    var otherPlayer = "";
+    var wins = 0;
+    var losses = 0;
+    var ties = 0;
+
+    $("#rock").on("click", function(){
+        console.log("rock")
+        playerChoice = "rock"
+    })
+
+    $("#paper").on("click", function(){
+        console.log("paper")
+        playerChoice = "paper"
+    })
+    
+    $("#scissors").on("click", function(){
+        console.log("scissors")
+        playerChoice = "scissors"
+    })
+    
+    if (playerChoice === "rock"){
+        if (otherPlayer === "rock"){
+            ties++;
+        }
+        if (otherPlayer === "paper"){
+            losses++;
+        }
+        if (otherPlayer === "scissor"){
+            wins++
+        }
+    };
+
+    if (playerChoice === "paper"){
+        if (otherPlayer === "rock"){
+            wins++;
+        }
+        if (otherPlayer === "paper"){
+            ties++;
+        }
+        if (otherPlayer === "scissor"){
+            losses++
+        }
+    };
+
+    if (playerChoice === "scissors"){
+        if (otherPlayer === "rock"){
+            losses++;
+        }
+        if (otherPlayer === "paper"){
+            wins++;
+        }
+        if (otherPlayer === "scissor"){
+            ties++
+        }
+    };
 
 }); //document.ready dont delete

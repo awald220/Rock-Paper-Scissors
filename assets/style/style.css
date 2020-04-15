@@ -9,26 +9,35 @@ body {
 #gameContent {
     display: flex;
     width: 80%;
+    margin: 20px;
 }
 
 #player1 {
     flex: 1;
+    margin: 20px;
+    border: 1px solid #cccccc;
 }
 
 #player2 {
     flex: 1;
+    margin: 20px;
+    border: 1px solid #cccccc;
 }
 
 #score-display {
     flex: 1;
+    margin: 20px;
+    border: 1px solid #cccccc;
 }
 
 input {
     display: flex;
+    border: 1px solid #cccccc;
 }
 
 #chatText {
     flex: 1;
+    border: 1px solid #cccccc;
 }
 
 #submit {
