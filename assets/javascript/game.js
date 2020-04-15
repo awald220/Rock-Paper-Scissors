@@ -31,61 +31,95 @@ $(document).ready(function(){
 
     })
 
+    // vars to determine score and users choices
     var playerChoice = "";
-    var otherPlayer = "";
+    var computerChoice = ["rock", "paper", "scissors"];
+    var computerGuess = "";
     var wins = 0;
     var losses = 0;
     var ties = 0;
 
+    // when player 1 presses rock this happens
     $("#rock").on("click", function(){
-        console.log("rock")
+        console.log(computerGuess)
         playerChoice = "rock"
-    })
-
+        getCompChoice()
+    });
+    //when player 1 presses paper this happens
     $("#paper").on("click", function(){
-        console.log("paper")
+        console.log(playerChoice)
         playerChoice = "paper"
-    })
-    
+        getCompChoice()
+    });
+    //when player 1 presses scissors this happens
     $("#scissors").on("click", function(){
-        console.log("scissors")
+        console.log(playerChoice)
         playerChoice = "scissors"
-    })
+        getCompChoice()
+    });
+
+    function getCompChoice(){
+        var computerGuess = computerChoice[Math.floor(Math.random() * computerChoice.length)]
+    }
+
+    // // when player 2 presses rock this happens
+    // $("#rock2").on("click", function(){
+    //     console.log(otherPlayer)
+    //     otherPlayer = "rock"
+    // });
+    // //when player 2 presses paper this happens
+    // $("#paper2").on("click", function(){
+    //     console.log(otherPlayer)
+    //     otherPlayer = "paper"
+    // });
+    // //when player 2 presses scissors this happens
+    // $("#scissors2").on("click", function(){
+    //     console.log(otherPlayer)
+    //     otherPlayer = "scissors"
+    // });
     
+    //determines if rock wins, looses or ties
     if (playerChoice === "rock"){
-        if (otherPlayer === "rock"){
+        if (computerGuess === "rock"){
             ties++;
         }
-        if (otherPlayer === "paper"){
+        if (computerGuess === "paper"){
             losses++;
         }
-        if (otherPlayer === "scissor"){
+        if (computerGuess === "scissor"){
             wins++
         }
     };
 
+    //determines if paper wins, looses, or ties
     if (playerChoice === "paper"){
-        if (otherPlayer === "rock"){
+        if (computerGuess === "rock"){
             wins++;
         }
-        if (otherPlayer === "paper"){
+        if (computerGuess === "paper"){
             ties++;
         }
-        if (otherPlayer === "scissor"){
+        if (computerGuess === "scissor"){
             losses++
         }
     };
 
+    //determines if scissors wins, looses, or ties
     if (playerChoice === "scissors"){
-        if (otherPlayer === "rock"){
+        if (computerGuess === "rock"){
             losses++;
         }
-        if (otherPlayer === "paper"){
+        if (computerGuess === "paper"){
             wins++;
         }
-        if (otherPlayer === "scissor"){
+        if (computerGuess === "scissor"){
             ties++
         }
     };
+
+    console.log("Wins: " + wins)
+    console.log("Losses: " + losses)
+    console.log("Ties:" + ties)
+    
 
 }); //document.ready dont delete
