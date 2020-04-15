@@ -7,8 +7,9 @@ $(document).ready(function(){
         storageBucket: "rock-paper-scissors-f04de.appspot.com"
     };
 
-    firebase.intializeApp(config);
+    firebase.initializeApp(config);
 
+    // Assign the reference to the database to a variable named 'database'
     var database = firebase.database();
 
     var chat = "";
@@ -22,11 +23,11 @@ $(document).ready(function(){
             chat: chat, 
             dateAdded: firebase.database.ServerValue.TIMESTAMP
         });
-        $("#chatText")[0].reset();
+        // $("#chatText")[0].reset();
     })
 
     database.ref().on("child_added", function (childSnapshot){
-        
+
     })
 
 
